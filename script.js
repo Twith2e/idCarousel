@@ -66,39 +66,29 @@ const idArray = [
   },
 ];
 
-profilePicture.src = idArray[currentIndex].img;
-userName.innerText = idArray[currentIndex].name;
-userCourse.innerText = idArray[currentIndex].course;
-userID.innerText = idArray[currentIndex].ID;
+function display() {
+  profilePicture.src = idArray[currentIndex].img;
+  userName.innerText = idArray[currentIndex].name;
+  userCourse.innerText = idArray[currentIndex].course;
+  userID.innerText = idArray[currentIndex].ID;
+}
+
+display();
 
 function next() {
   currentIndex++;
   if (currentIndex < idArray.length) {
-    profilePicture.src = idArray[currentIndex].img;
-    userName.innerText = idArray[currentIndex].name;
-    userCourse.innerText = idArray[currentIndex].course;
-    userID.innerText = idArray[currentIndex].ID;
   } else if (currentIndex > idArray.length - 1) {
     currentIndex = 0;
-    profilePicture.src = idArray[currentIndex].img;
-    userName.innerText = idArray[currentIndex].name;
-    userCourse.innerText = idArray[currentIndex].course;
-    userID.innerText = idArray[currentIndex].ID;
   }
+  display();
 }
 
 function prev() {
   if (currentIndex === 0) {
     currentIndex = idArray.length - 1;
-    profilePicture.src = idArray[currentIndex].img;
-    userName.innerText = idArray[currentIndex].name;
-    userCourse.innerText = idArray[currentIndex].course;
-    userID.innerText = idArray[currentIndex].ID;
   } else if (currentIndex > 0) {
     currentIndex--;
-    profilePicture.src = idArray[currentIndex].img;
-    userName.innerText = idArray[currentIndex].name;
-    userCourse.innerText = idArray[currentIndex].course;
-    userID.innerText = idArray[currentIndex].ID;
   }
+  display();
 }
